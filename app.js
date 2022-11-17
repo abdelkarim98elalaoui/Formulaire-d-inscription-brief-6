@@ -7,6 +7,7 @@ let emailInp = document.querySelector("#email");
 let emailP = document.querySelector("#emailP");
 let phoneInp = document.querySelector("#number");
 let phoneP = document.querySelector("#numberP");
+
 //events
 
 btn.addEventListener("click", check);
@@ -15,7 +16,7 @@ function check() {
   //variables
   let name = nameInp.value;
   let prename = prenomInp.value;
-  // let email = emailInp.value;
+  let email = emailInp.value;
   let phone = phoneInp.value;
   // conditions
   if (name.match(/[0-9]/g)) {
@@ -54,21 +55,21 @@ function check() {
     prenomP.innerHTML = "";
   }
   //email
-  //   if (emailInp.value.match(`${name} + "." + ${prename} + "@"ofppt.ma"`)) {
-  //     console.log(name, prename);
-  //     console.log("im here");
-  //     emailInp.style.border = "1px green solid";
-  //     emailP.style.color = "green";
-  //   } else {
-  //     emailInp.style.border = "1px red solid";
-  //     emailP.style.color = "red";
-  //     emailP.innerHTML = "its must be nom.prenom@ofppt.ma";
-  //   }
+  if (emailInp.value === name + "." + prename + "@ofppt.ma") {
+    console.log(name, prename);
+    console.log("im here");
+    emailInp.style.border = "1px green solid";
+    emailP.style.color = "green";
+    emailP.innerHTML = "";
+  } else {
+    emailInp.style.border = "1px red solid";
+    emailP.style.color = "red";
+    emailP.innerHTML = "its must be nom.prenom@ofppt.ma";
+  }
   //phone
   let two = phone.slice(0, 2);
   console.log(two);
-
-  if (two === "05" || two === "06" || (two === "07" && phone.length < 6)) {
+  if ((two === "05" || two === "06" || two === "07") && phone.length == 10) {
     phoneP.innerHTML = "";
     phoneInp.style.border = "1px green solid";
     phoneP.style.color = "green";
@@ -79,28 +80,19 @@ function check() {
     }
   } else {
     phoneP.innerHTML =
-      "its must start with 05 or 06 or 07 and more than 6 numbers";
+      "its must start with 05 or 06 or 07 and more than 9 numbers";
     phoneP.style.color = "red";
     phoneInp.style.border = "1px red solid";
   }
-  // if (two === "05" || two === "06" || two === "07") {
-  //   phoneP.innerHTML = "";
-  //   phoneInp.style.border = "1px green solid";
-  //   phoneP.style.color = "green";
-  // } else {
-  //   phoneP.innerHTML = "";
-  //   phoneInp.style.border = "1px red solid";
-  //   phoneP.style.color = "red";
-  //   phoneP.innerHTML = "its must start with 05 or 06 or 07";
-  // }
-  // if (phone.length < 6) {
-  //   phoneP.innerHTML = "";
-  //   phoneInp.style.border = "1px red solid";
-  //   phoneP.style.color = "red";
-  //   phoneP.innerHTML = "its must have more than 6 numbers";
-  // } else {
-  //   phoneP.innerHTML = "";
-  //   phoneInp.style.border = "1px red solid";
-  //   phoneP.style.color = "red";
-  // }
+
+  // genre
+  let feminin = document.querySelector("#feminin");
+  let masculin = document.querySelector("#masculin");
+  let genreRadio = document.querySelector(".genreRadio");
+  if (feminin.checked || masculin.checked) {
+    genreRadio.style.color = "green";
+  } else {
+    console.log("its not");
+    genreRadio.style.color = "red";
+  }
 }

@@ -13,9 +13,10 @@ body {
 
 input {
   padding: 1rem;
-  border: transparent;
+  border: 1px solid transparent;
   background-color: lightgray;
   outline: none;
+  /* display: block; */
 }
 #output,
 #prenomP,
@@ -30,4 +31,16 @@ button {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+}
+
+select {
+  outline: none;
+  padding: 1rem;
+  border: transparent;
+}
+/* .club option {
+  padding: 1rem;
+} */
+.club {
+  display: flex;
 }
