@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>form validation on pass </title>
+  </head>
+  <body>
+    <div class="container">
+
+ 
+    <div class="left">
+      <img class="wave" src="./images/layered-waves-haikei.png" alt="">
+    </div>
+    <div class="right">
+      <form action="/">
+        <!-- nom -->
+        <div class="nameFlex">
+
+          <input class="inp" id="name" placeholder="Votre nom" type="text" />
+          <p class="output"  id="output"></p>
+          <!-- prenom -->
+          <input class="inp"  id="prename" placeholder="Votre Prenom" type="text" />
+          <p  class="output" id="prenomP"></p>
+        </div>
+        <!-- email -->
+        <input class="inp"  id="email" placeholder="Votre Email" type="text" />
+        <p class="output"  id="emailP"></p>
+        <!-- phone -->
+        <input  class="inp" id="number" placeholder="Votre Télephone" type="text" />
+        <p class="output"  id="numberP"></p>
+
+     
+       <!-- genre -->
+       <div class="radio">
+        <div class="genreRadio">
+          <h3>Genre</h3>
+          <div class="genreFlex">
+            <input type="radio" id="feminin" name="genre" value="feminin" />
+            <label for="feminin">feminin</label>
+            <input type="radio" id="masculin" name="genre" value="masculin" />
+            <label for="masculin">masculin</label>
+          </div>
+         </div>
+      
+            <!-- group-->
+            <hr>
+            <div class="group">
+              <h3>Groups</h3>
+              <div class="flex">
+               <div class="flex">
+                 <input class="groupInp" name="group" type="radio" value="DW101">DW101</input >
+                 <input class="inp1" name="group" type="radio" value="DW102">DW102</input >
+               </div>
+               <div class="flex">
+                 <input class="inp2"name="group" type="radio" value="DW103">DW103</input >
+                 <input class="inp3" name="group" type="radio" value="DM101">DM101</input >
+               </div>
+                <input class="inp4" name="group" type="radio" value="DM102">DM102</input >
+             
+              </div>
+            </div>
+          </div>
+          <!-- club -->
+          <hr>
+          <div class="club">
+           <div class="clubFlex">
+             <h3>Clubs</h3>
+             <p class="output"  id="clubP"></p>
+           </div>
+           <select multiple name="club" id="clubs">
+             <option value="Informatique">Informatique</option>
+             <option value="Robotique">Robotique</option>
+             <option value=" Jeu d'échecs">Jeu d'échecs</option>
+             <option value="Musique">Musique</option>
+             <option value="Foot">Foot</option>
+             <option value="Théatre">Théatre</option>
+           </select>
+         </div>
+         <p id="output"></p>
+         <button id="btn">Valider</button>
+      </form>
+    </div>
+  </div>
+    <script src="./pass.js"></script>
+  </body>
+</html>
